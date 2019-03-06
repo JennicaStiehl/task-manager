@@ -33,7 +33,7 @@ class TaskManagerApp < Sinatra::Base
   end
 
   set :method_override, true  # this allows us to use _method in the form
-  ...
+  
   put '/tasks/:id' do |id|
     Task.update(id.to_i, params[:task])
     redirect "/tasks/#{id}"
@@ -43,5 +43,5 @@ class TaskManagerApp < Sinatra::Base
     Task.destroy(id.to_i)
     redirect '/tasks'
   end
-  
+
 end
